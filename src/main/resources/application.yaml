@@ -1,0 +1,30 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/shopping-cart;
+    username: root
+    password: root
+    drive-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    show-sql: true
+    properties:
+      format_sql: true
+    database: mysql
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+  liquibase:
+    change-log: classpath:db/changelog/changelog-master.xml
+  security:
+  redis:
+    time-to-live: 60000
+    key-prefix: "shopping-cart"
+  cache:
+    type: redis
+    host: localhost
+    port: 6379
+
+#springdoc:
+#  swagger-ui:
+##   remove model classes
+#    defaultModelsExpandDepth: -1
+##   disable try it out
+#    supportedSubmitMethods: []
+
